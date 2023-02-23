@@ -34,6 +34,7 @@ class QuestionDto:
     attachment: Optional[Attachment]
     question_type: QuestionType
     answer_id: ObjectId
+    question_price: int
 
 
 @dataclass
@@ -43,6 +44,7 @@ class AnswerDto:
     attachment: Optional[Attachment]
     answer_type: AnswerType
     question_id: ObjectId
+    answer_price: int
 
 
 @dataclass
