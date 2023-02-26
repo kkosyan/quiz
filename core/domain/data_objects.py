@@ -24,21 +24,21 @@ class AnswerType(Enum):
 @dataclass
 class QuestionDto:
     question_id: ObjectId
-    text: Optional[str]
-    attachment: Optional[bytes]
     question_type: QuestionType
     answer_id: ObjectId
     question_price: int
+    text: Optional[str] = None
+    attachment: Optional[bytes] = None
 
 
 @dataclass
 class AnswerDto:
     answer_id: ObjectId
-    text: Optional[str]
-    attachment: Optional[bytes]
     answer_type: AnswerType
     question_id: ObjectId
     answer_price: int
+    text: Optional[str] = None
+    attachment: Optional[bytes] = None
 
 
 @dataclass
