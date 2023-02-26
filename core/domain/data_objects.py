@@ -22,16 +22,10 @@ class AnswerType(Enum):
 
 
 @dataclass
-class Attachment:
-    id: str
-    content: bytes
-
-
-@dataclass
 class QuestionDto:
     question_id: ObjectId
     text: Optional[str]
-    attachment: Optional[Attachment]
+    attachment: Optional[bytes]
     question_type: QuestionType
     answer_id: ObjectId
     question_price: int
@@ -41,7 +35,7 @@ class QuestionDto:
 class AnswerDto:
     answer_id: ObjectId
     text: Optional[str]
-    attachment: Optional[Attachment]
+    attachment: Optional[bytes]
     answer_type: AnswerType
     question_id: ObjectId
     answer_price: int
