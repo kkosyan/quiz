@@ -1,5 +1,3 @@
-from datetime import datetime
-
 from faunadb import query
 from faunadb.client import FaunaClient
 
@@ -22,7 +20,6 @@ class FaunaQuestionSaver(QuestionSaver):
                         'question_type': question.question_type,
                         'answer_id': question.answer_id,
                         'question_price': question.question_price,
-                        'date_created': datetime.now(),
                     }
                 }
             )
