@@ -1,6 +1,6 @@
 from typing import Optional
 
-from core.domain.data_objects import AnswerType, QuestionDto, Attachment, AnswerDto, ObjectId
+from core.domain.data_objects import AnswerType, QuestionDto, AnswerDto, ObjectId
 
 
 class AnswerPresenter:
@@ -8,7 +8,7 @@ class AnswerPresenter:
         self.answer_id = answer_id
 
     def present(self, answer_type: AnswerType, question: QuestionDto, text: Optional[str],
-                attachment: Optional[Attachment]):
+                attachment: Optional[bytes]):
         return AnswerDto(
             answer_id=self.answer_id,
             text=text,

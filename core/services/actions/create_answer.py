@@ -1,6 +1,6 @@
 from typing import Optional
 
-from core.domain.data_objects import Attachment, AnswerType, AnswerDto, QuestionDto
+from core.domain.data_objects import AnswerType, AnswerDto, QuestionDto
 from core.services.id_generator import IdGenerator
 
 
@@ -8,7 +8,7 @@ class AnswerCreator:
     def __init__(self, id_generator: IdGenerator):
         self.id_generator = id_generator
 
-    def create(self, answer_type: AnswerType, question: QuestionDto, attachment: Optional[Attachment] = None,
+    def create(self, answer_type: AnswerType, question: QuestionDto, attachment: Optional[bytes] = None,
                text: Optional[str] = None):
         answer_id = self._generate_question_id()
         return AnswerDto(
