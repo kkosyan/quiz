@@ -1,7 +1,7 @@
 from faunadb.client import FaunaClient
 
-from adapters.fauna_question_extractor import FaunaQuestionExtractor
-from adapters.fauna_question_saver import FaunaQuestionSaver
+from adapters.fauna_database_extractor import FaunaDatabaseExtractor
+from adapters.fauna_database_saver import FaunaDatabaseSaver
 from core.domain.data_objects import QuestionDto, QuestionType, ObjectId
 from settings import FAUNA__ADMIN_KEY
 
@@ -20,17 +20,21 @@ class TestFaunaQuestionIntegration:
     )
 
     def test_fauna_question_saver(self):
-        saver = FaunaQuestionSaver(
+        saver = FaunaDatabaseSaver(
             client=self.fauna_client,
+            collection='questions',
         )
-        saver.save(question=self.sample_question)
+        saver.save(dto=self.sample_question)
 
     def test_fauna_question_extractor(self):
-        extractor = FaunaQuestionExtractor(
+        extractor = FaunaDatabaseExtractor(
             client=self.fauna_client,
+            collection='questions',
+            dto=QuestionDto,
+            index='question_id',
         )
 
-        result = extractor.extract(question_id=ObjectId('123'))
+        result = extractor.extract(object_id=ObjectId('123'))
         expected_result = self.sample_question
 
         assert result == expected_result
