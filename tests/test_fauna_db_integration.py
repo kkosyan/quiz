@@ -15,7 +15,7 @@ class TestFaunaQuestionIntegration:
         answer_id=ObjectId('123'),
         attachment=b'123',
         question_price=100,
-        question_id=ObjectId('123'),
+        question_id=ObjectId('1234'),
         question_type=QuestionType.IMAGE.value,
     )
 
@@ -34,7 +34,7 @@ class TestFaunaQuestionIntegration:
             index='question_id',
         )
 
-        result = extractor.extract(object_id=ObjectId('123'))
+        result = extractor.extract(object_id=ObjectId('1234'))
         expected_result = self.sample_question
 
         assert result == expected_result

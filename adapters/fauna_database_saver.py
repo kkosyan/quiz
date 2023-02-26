@@ -1,5 +1,5 @@
 from dataclasses import asdict
-from typing import Union, Type
+from typing import Union
 
 from faunadb import query
 from faunadb.client import FaunaClient
@@ -13,11 +13,11 @@ class FaunaDatabaseSaver(DatabaseSaver):
         self.client = client
         self.collection = collection
 
-    def save(self, dto: Union[Type[QuestionDto], Type[AnswerDto], Type[TaskDto], Type[RoundDto], Type[GameDto]]):
+    def save(self, dto: Union[QuestionDto, AnswerDto, TaskDto, RoundDto, GameDto]):
         self.client.query(
             query.create(
                 query.collection(self.collection), {
-                    'data': {asdict(dto)}
+                    'data': asdict(dto)
                 }
             )
         )
