@@ -5,5 +5,5 @@ from core.domain.data_objects import QuestionDto, AnswerDto, TaskDto, RoundDto, 
 
 
 class DatabaseSaver(abc.ABC):
-    def save(self, dto: Union[QuestionDto, AnswerDto, TaskDto, RoundDto, GameDto]):
+    def save(self, dst: str, dto: Union[QuestionDto, AnswerDto, TaskDto, RoundDto, GameDto]):
         ...
