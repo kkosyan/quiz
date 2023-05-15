@@ -59,7 +59,6 @@ class AnswerDto:
             question_id=question_id,
             answer_type=answer_type,
             answer_id=answer_id,
-            answer_price=answer_price,
             text=text,
             attachment=attachment,
         )
