@@ -22,9 +22,8 @@ class TestFaunaQuestionIntegration:
     def test_fauna_question_saver(self):
         saver = FaunaDatabaseSaver(
             client=self.fauna_client,
-            collection='questions',
         )
-        saver.save(dto=self.sample_question)
+        saver.save(dst='questions', dto=self.sample_question)
 
     def test_fauna_question_extractor(self):
         extractor = FaunaDatabaseExtractor(
