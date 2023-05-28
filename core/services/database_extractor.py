@@ -1,9 +1,8 @@
 import abc
-from typing import Union
 
-from core.domain.data_objects import ObjectId, QuestionDto, AnswerDto, TaskDto, RoundDto, GameDto
+from core.domain.data_objects import BaseDto, ObjectId
 
 
 class DatabaseExtractor(abc.ABC):
-    def extract(self, object_id: ObjectId) -> Union[QuestionDto, AnswerDto, TaskDto, RoundDto, GameDto]:
+    def extract(self, object_id: ObjectId) -> BaseDto:
         ...
