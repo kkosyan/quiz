@@ -17,7 +17,11 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="/">Creator mode</a></li>
+                <li>
+                    <a href="{{ url_for('main.create_new_game') }}">
+                        Creator mode
+                    </a>
+                </li>
                 <li><a href="/">Game mode</a></li>
             </ul>
         </div>
