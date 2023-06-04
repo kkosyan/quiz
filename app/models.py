@@ -12,22 +12,22 @@ class AttachmentType:
 class Question(db.Model):
     __tablename__ = 'questions'
     question_id = db.Column(db.String(64), primary_key=True)
-    question_type = db.Column(db.String(64))
     question_price = db.Column(db.Integer)
     question_position = db.Column(db.Integer)
     related_category = db.Column(db.String(64), db.ForeignKey('categories.category_id'))
     text = db.Column(db.Text)
     attachment = db.Column(db.String(64))
+    url = db.Column(db.Text)
     related_answer = db.relationship('Answer', backref='questions', lazy='dynamic')
 
 
 class Answer(db.Model):
     __tablename__ = 'answers'
     answer_id = db.Column(db.String(64), primary_key=True)
-    answer_type = db.Column(db.String(64))
     related_question_id = db.Column(db.String(64), db.ForeignKey('questions.question_id'))
     text = db.Column(db.Text)
     attachment = db.Column(db.String(64))
+    url = db.Column(db.Text)
 
 
 class Category(db.Model):
