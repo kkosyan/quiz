@@ -50,5 +50,3 @@ class CreateNewCategory(FlaskForm):
     answer_5_url = URLField('URL:', validators=[Optional()])
 
     submit_category = SubmitField('Submit category')
-
-    create_new_category = BooleanField('Add category to the round?')
