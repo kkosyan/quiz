@@ -1,3 +1,0 @@
-class CreateMyGameUsecase:
-    def __init__(self):
-        ...
