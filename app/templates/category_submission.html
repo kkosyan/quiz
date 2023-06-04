@@ -1,0 +1,18 @@
+{% extends "base_simple.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}KosyaK  quiz{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>Game {{current_game_name}}</h1>
+    <h2>Round {{current_round_name}}</h2>
+    <h3>Category {{current_category_name}} was successfully submitted</h3>>
+</div>
+<a class="btn btn-default" href="{{ url_for('main.create_new_round') }}">
+     Add category to round {{current_round_name}}
+</a>
+<a class="btn btn-default" href="{{ url_for('main.create_new_round') }}">
+    Add round to game {{current_game_name}}
+</a>
+{% endblock %}
