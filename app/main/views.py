@@ -75,13 +75,16 @@ def create_new_category():
         question_1_url = form.question_1_url.data
         question_1_id = id_generator.generate()
         question_1_price = session.get('start_price')
+        question_1_file_id = None
+        if question_1_file is not None:
+            question_1_file_id = id_generator.generate()
         question_1 = Question(
             question_id=question_1_id,
             question_price=question_1_price,
             question_position=1,
             related_category=category_id,
             text=question_1_text,
-            attachment=question_1_file,
+            attachment=question_1_file_id,
             url=question_1_url,
         )
         db.session.add(question_1)
@@ -91,12 +94,15 @@ def create_new_category():
         answer_1_file = form.answer_1_file.data
         answer_1_url = form.answer_1_url.data
         answer_1_id = id_generator.generate()
+        answer_1_file_id = None
+        if answer_1_file is not None:
+            answer_1_file_id = id_generator.generate()
 
         answer_1 = Answer(
             answer_id=answer_1_id,
             related_question_id=question_1_id,
             text=answer_1_text,
-            attachment=answer_1_file,
+            attachment=answer_1_file_id,
             url=answer_1_url,
         )
         db.session.add(answer_1)
@@ -107,13 +113,16 @@ def create_new_category():
         question_2_url = form.question_2_url.data
         question_2_id = id_generator.generate()
         question_2_price = session.get('start_price') * 2
+        question_2_file_id = None
+        if question_2_file is not None:
+            question_2_file_id = id_generator.generate()
         question_2 = Question(
             question_id=question_2_id,
             question_price=question_2_price,
             question_position=2,
             related_category=category_id,
             text=question_2_text,
-            attachment=question_2_file,
+            attachment=question_2_file_id,
             url=question_2_url,
         )
         db.session.add(question_2)
@@ -124,11 +133,15 @@ def create_new_category():
         answer_2_url = form.answer_2_url.data
         answer_2_id = id_generator.generate()
 
+        answer_2_file_id = None
+        if answer_2_file is not None:
+            answer_2_file_id = id_generator.generate()
+
         answer_2 = Answer(
             answer_id=answer_2_id,
             related_question_id=question_2_id,
             text=answer_2_text,
-            attachment=answer_2_file,
+            attachment=answer_2_file_id,
             url=answer_2_url,
         )
         db.session.add(answer_2)
@@ -139,13 +152,16 @@ def create_new_category():
         question_3_url = form.question_3_url.data
         question_3_id = id_generator.generate()
         question_3_price = session.get('start_price') * 3
+        question_3_file_id = None
+        if question_3_file is not None:
+            question_3_file_id = id_generator.generate()
         question_3 = Question(
             question_id=question_3_id,
             question_price=question_3_price,
             question_position=3,
             related_category=category_id,
             text=question_3_text,
-            attachment=question_3_file,
+            attachment=question_3_file_id,
             url=question_3_url,
         )
         db.session.add(question_3)
@@ -155,12 +171,15 @@ def create_new_category():
         answer_3_file = form.answer_3_file.data
         answer_3_url = form.answer_3_url.data
         answer_3_id = id_generator.generate()
+        answer_3_file_id = None
+        if answer_3_file is not None:
+            answer_3_file_id = id_generator.generate()
 
         answer_3 = Answer(
             answer_id=answer_3_id,
             related_question_id=question_3_id,
             text=answer_3_text,
-            attachment=answer_3_file,
+            attachment=answer_3_file_id,
             url=answer_3_url,
         )
         db.session.add(answer_3)
@@ -171,13 +190,16 @@ def create_new_category():
         question_4_url = form.question_4_url.data
         question_4_id = id_generator.generate()
         question_4_price = session.get('start_price') * 4
+        question_4_file_id = None
+        if question_4_file is not None:
+            question_4_file_id = id_generator.generate()
         question_4 = Question(
             question_id=question_4_id,
             question_price=question_4_price,
             question_position=4,
             related_category=category_id,
             text=question_4_text,
-            attachment=question_4_file,
+            attachment=question_4_file_id,
             url=question_4_url,
         )
         db.session.add(question_4)
@@ -187,12 +209,15 @@ def create_new_category():
         answer_4_file = form.answer_4_file.data
         answer_4_url = form.answer_4_url.data
         answer_4_id = id_generator.generate()
+        answer_4_file_id = None
+        if answer_4_file is not None:
+            answer_4_file_id = id_generator.generate()
 
         answer_4 = Answer(
             answer_id=answer_4_id,
             related_question_id=question_4_id,
             text=answer_4_text,
-            attachment=answer_4_file,
+            attachment=answer_4_file_id,
             url=answer_4_url,
         )
         db.session.add(answer_4)
@@ -203,13 +228,16 @@ def create_new_category():
         question_5_url = form.question_5_url.data
         question_5_id = id_generator.generate()
         question_5_price = session.get('start_price') * 5
+        question_5_file_id = None
+        if question_5_file is not None:
+            question_5_file_id = id_generator.generate()
         question_5 = Question(
             question_id=question_5_id,
             question_price=question_5_price,
             question_position=5,
             related_category=category_id,
             text=question_5_text,
-            attachment=question_5_file,
+            attachment=question_5_file_id,
             url=question_5_url,
         )
         db.session.add(question_5)
@@ -219,12 +247,15 @@ def create_new_category():
         answer_5_file = form.answer_5_file.data
         answer_5_url = form.answer_5_url.data
         answer_5_id = id_generator.generate()
+        answer_5_file_id = None
+        if answer_5_file is not None:
+            answer_5_file_id = id_generator.generate()
 
         answer_5 = Answer(
             answer_id=answer_5_id,
             related_question_id=question_5_id,
             text=answer_5_text,
-            attachment=answer_5_file,
+            attachment=answer_5_file_id,
             url=answer_5_url,
         )
         db.session.add(answer_5)
