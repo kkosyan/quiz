@@ -8,5 +8,16 @@
     <h1>Game {{current_game_name}}</h1>
     <h2>Round {{current_round_name}}</h2>
 </div>
+<div class="container">
+    <form action="" method="post" class="form" role="form">
+        {{ form.csrf_token() }}
+        <div class="row">
+           <div class="form-group col-md-6">
+             {{ wtf.form_field(form.category_name, class='form-control',
+                placeholder='Category name') }}
+            </div>
+        </div>
+    </form>
+</div>
 {{ wtf.quick_form(form) }}
 {% endblock %}
