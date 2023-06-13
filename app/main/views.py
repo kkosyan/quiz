@@ -3,8 +3,9 @@ from flask import render_template, redirect, url_for, session
 from . import main
 from .forms import CreateNewGameForm, CreateNewRound, CreateNewCategory
 from .utils import UuidIdGenerator
-from .. import db
+from .. import db, images
 from ..models import Game, Round, Category, Question, Answer
+import os
 
 id_generator = UuidIdGenerator()
 
@@ -78,6 +79,7 @@ def create_new_category():
         question_1_file_id = None
         if question_1_file is not None:
             question_1_file_id = id_generator.generate()
+            filename = images.save(form.question_1_file)
         question_1 = Question(
             question_id=question_1_id,
             question_price=question_1_price,
