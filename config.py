@@ -15,6 +15,7 @@ class Config:
 
 class ProductionConfig(Config):
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'data.sqlite')
+    UPLOADED_IMAGES_DEST = os.path.join(basedir, 'games_files')
 
     @classmethod
     def init_app(cls, app):
