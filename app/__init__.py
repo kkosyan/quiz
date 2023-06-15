@@ -17,7 +17,6 @@ def create_app():
     db.init_app(app)
     bootstrap.init_app(app)
 
-
     configure_uploads(app, images)
 
     from .main import main as main_blueprint

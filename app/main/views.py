@@ -79,7 +79,7 @@ def create_new_category():
         question_1_file_id = None
         if question_1_file is not None:
             question_1_file_id = id_generator.generate()
-            filename = images.save(form.question_1_file)
+            images.save(form.question_1_file.data, None, f'{question_1_file_id}.')
         question_1 = Question(
             question_id=question_1_id,
             question_price=question_1_price,
@@ -99,6 +99,7 @@ def create_new_category():
         answer_1_file_id = None
         if answer_1_file is not None:
             answer_1_file_id = id_generator.generate()
+            images.save(form.question_2_file.data, None, f'{question_2_file_id}.')
 
         answer_1 = Answer(
             answer_id=answer_1_id,
