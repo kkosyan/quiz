@@ -99,7 +99,7 @@ def create_new_category():
         answer_1_file_id = None
         if answer_1_file is not None:
             answer_1_file_id = id_generator.generate()
-            images.save(form.question_2_file.data, None, f'{question_2_file_id}.')
+            images.save(form.answer_1_file.data, None, f'{answer_1_file_id}.')
 
         answer_1 = Answer(
             answer_id=answer_1_id,
@@ -119,6 +119,7 @@ def create_new_category():
         question_2_file_id = None
         if question_2_file is not None:
             question_2_file_id = id_generator.generate()
+            images.save(form.question_2_file.data, None, f'{question_2_file_id}.')
         question_2 = Question(
             question_id=question_2_id,
             question_price=question_2_price,
@@ -139,6 +140,7 @@ def create_new_category():
         answer_2_file_id = None
         if answer_2_file is not None:
             answer_2_file_id = id_generator.generate()
+            images.save(form.answer_2_file.data, None, f'{answer_2_file_id}.')
 
         answer_2 = Answer(
             answer_id=answer_2_id,
@@ -158,6 +160,7 @@ def create_new_category():
         question_3_file_id = None
         if question_3_file is not None:
             question_3_file_id = id_generator.generate()
+            images.save(form.question_3_file.data, None, f'{question_3_file_id}.')
         question_3 = Question(
             question_id=question_3_id,
             question_price=question_3_price,
@@ -177,6 +180,7 @@ def create_new_category():
         answer_3_file_id = None
         if answer_3_file is not None:
             answer_3_file_id = id_generator.generate()
+            images.save(form.answer_3_file.data, None, f'{answer_3_file_id}.')
 
         answer_3 = Answer(
             answer_id=answer_3_id,
@@ -196,6 +200,7 @@ def create_new_category():
         question_4_file_id = None
         if question_4_file is not None:
             question_4_file_id = id_generator.generate()
+            images.save(form.question_4_file.data, None, f'{question_4_file_id}.')
         question_4 = Question(
             question_id=question_4_id,
             question_price=question_4_price,
@@ -215,6 +220,7 @@ def create_new_category():
         answer_4_file_id = None
         if answer_4_file is not None:
             answer_4_file_id = id_generator.generate()
+            images.save(form.answer_4_file.data, None, f'{answer_4_file_id}.')
 
         answer_4 = Answer(
             answer_id=answer_4_id,
@@ -234,6 +240,7 @@ def create_new_category():
         question_5_file_id = None
         if question_5_file is not None:
             question_5_file_id = id_generator.generate()
+            images.save(form.question_5_file.data, None, f'{question_5_file_id}.')
         question_5 = Question(
             question_id=question_5_id,
             question_price=question_5_price,
@@ -253,6 +260,7 @@ def create_new_category():
         answer_5_file_id = None
         if answer_5_file is not None:
             answer_5_file_id = id_generator.generate()
+            images.save(form.answer_5_file.data, None, f'{answer_5_file_id}.')
 
         answer_5 = Answer(
             answer_id=answer_5_id,
