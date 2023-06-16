@@ -5,7 +5,6 @@ from .forms import CreateNewGameForm, CreateNewRound, CreateNewCategory
 from .utils import UuidIdGenerator
 from .. import db, images
 from ..models import Game, Round, Category, Question, Answer
-import os
 
 id_generator = UuidIdGenerator()
 
@@ -14,6 +13,12 @@ id_generator = UuidIdGenerator()
 def index():
     games = Game.query.all()
     return render_template('index.html', games=games)
+
+
+@main.route('/game_mode_index', methods=['GET', 'POST'])
+def game_mode_index():
+    games = Game.query.all()
+    return render_template('game_mode_index.html', games=games)
 
 
 @main.route('/creator_mode', methods=['GET', 'POST'])
@@ -69,7 +74,7 @@ def create_new_category():
         question_1_id = id_generator.generate()
         question_1_price = session.get('start_price')
         question_1_file_id = None
-        if question_1_file is not None:
+        if question_1_file.filename:
             question_1_file_id = id_generator.generate()
             images.save(form.question_1_file.data, None, f'{question_1_file_id}.')
         question_1 = Question(
@@ -89,7 +94,7 @@ def create_new_category():
         answer_1_url = form.answer_1_url.data
         answer_1_id = id_generator.generate()
         answer_1_file_id = None
-        if answer_1_file is not None:
+        if answer_1_file.filename:
             answer_1_file_id = id_generator.generate()
             images.save(form.answer_1_file.data, None, f'{answer_1_file_id}.')
 
@@ -109,7 +114,7 @@ def create_new_category():
         question_2_id = id_generator.generate()
         question_2_price = session.get('start_price') * 2
         question_2_file_id = None
-        if question_2_file is not None:
+        if question_2_file.filename:
             question_2_file_id = id_generator.generate()
             images.save(form.question_2_file.data, None, f'{question_2_file_id}.')
         question_2 = Question(
@@ -130,7 +135,7 @@ def create_new_category():
         answer_2_id = id_generator.generate()
 
         answer_2_file_id = None
-        if answer_2_file is not None:
+        if answer_2_file.filename:
             answer_2_file_id = id_generator.generate()
             images.save(form.answer_2_file.data, None, f'{answer_2_file_id}.')
 
@@ -150,7 +155,7 @@ def create_new_category():
         question_3_id = id_generator.generate()
         question_3_price = session.get('start_price') * 3
         question_3_file_id = None
-        if question_3_file is not None:
+        if question_3_file.filename:
             question_3_file_id = id_generator.generate()
             images.save(form.question_3_file.data, None, f'{question_3_file_id}.')
         question_3 = Question(
@@ -170,7 +175,7 @@ def create_new_category():
         answer_3_url = form.answer_3_url.data
         answer_3_id = id_generator.generate()
         answer_3_file_id = None
-        if answer_3_file is not None:
+        if answer_3_file.filename:
             answer_3_file_id = id_generator.generate()
             images.save(form.answer_3_file.data, None, f'{answer_3_file_id}.')
 
@@ -190,7 +195,7 @@ def create_new_category():
         question_4_id = id_generator.generate()
         question_4_price = session.get('start_price') * 4
         question_4_file_id = None
-        if question_4_file is not None:
+        if question_4_file.filename:
             question_4_file_id = id_generator.generate()
             images.save(form.question_4_file.data, None, f'{question_4_file_id}.')
         question_4 = Question(
@@ -210,7 +215,7 @@ def create_new_category():
         answer_4_url = form.answer_4_url.data
         answer_4_id = id_generator.generate()
         answer_4_file_id = None
-        if answer_4_file is not None:
+        if answer_4_file.filename:
             answer_4_file_id = id_generator.generate()
             images.save(form.answer_4_file.data, None, f'{answer_4_file_id}.')
 
@@ -230,7 +235,7 @@ def create_new_category():
         question_5_id = id_generator.generate()
         question_5_price = session.get('start_price') * 5
         question_5_file_id = None
-        if question_5_file is not None:
+        if question_5_file.filename:
             question_5_file_id = id_generator.generate()
             images.save(form.question_5_file.data, None, f'{question_5_file_id}.')
         question_5 = Question(
@@ -250,7 +255,7 @@ def create_new_category():
         answer_5_url = form.answer_5_url.data
         answer_5_id = id_generator.generate()
         answer_5_file_id = None
-        if answer_5_file is not None:
+        if answer_5_file.filename:
             answer_5_file_id = id_generator.generate()
             images.save(form.answer_5_file.data, None, f'{answer_5_file_id}.')
 
